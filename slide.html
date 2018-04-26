@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<!-- begin Slider -->
+	<div id="slide-show-container">
+		<div class="my-slides fade">
+			<div class="number-text">1/3</div>
+			<img src="images2.jpg" alt="" style="width: 100%" height="300px">
+			<div class="text">Text</div>
+		</div>
+		<div class="my-slides fade">
+			<div class="number-text">2/3</div>
+			<img src="images3.jpg" alt="" style="width: 100%" height="300px">
+			<div class="text">Text</div>
+		</div>
+		<div class="my-slides fade">
+			<div class="number-text">3/3</div>
+			<img src="images4.jpg" alt="" style="width: 100%" height="300px">
+			<div class="text">Text</div>
+		</div>
+		<a href="#" class="prev" onclick="plusSlides(event, -1)">&#10094</a>
+		<a href="#" class="next" onclick="plusSlides(event, 1)">&#10095</a>
+	</div>
+	<br>
+	<div style="text-align:center;">
+		<span class="dot active" onclick="currentSlide(1)"></span>
+		<span class="dot" onclick="currentSlide(2)"></span>
+		<span class="dot" onclick="currentSlide(3)"></span>
+	</div>
+
+<!-- end Slider -->
+<script type="text/javascript">
+	var slideIndex = 2; // нащо ми одразу вказуэм якесь значення ы чого саме 1?
+	showSlides(slideIndex);
+
+	function plusSlides(event, n){
+		event.preventDefault();
+		slideIndex += n;
+		showSlides(slideIndex);
+	}
+
+	function currentSlide(n){
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n){
+		var i;
+		var slides = document.getElementsByClassName('my-slides');
+		var dots = document.getElementsByClassName('dot');
+
+		if(n > slides.length){
+			slideIndex = 1;
+		}
+		if(n < 1){
+			slideIndex = slides.length;
+		}
+		for(i=0; i<slides.length; i++){
+			slides[i].style.display = 'none';
+		}
+		for(i=0; i<dots.length; i++){
+			dots[i].className=dots[i].className.replace('active', '');
+		}
+		slides[slideIndex-1].style.display = 'block';
+		dots[slideIndex-1].className += " active";
+	}
+
+</script>
+
+</body>
+</html>

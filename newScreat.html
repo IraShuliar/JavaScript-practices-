@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="main-list">
+		<ul>
+			<li>Test1</li>
+			<li>Test2</li>
+			<li>Test3</li>
+			<li>Test4</li>
+		</ul>
+		<input type="button" value="<" id="menu-button">
+	</div>
+	<div id="search-list">
+		<input type="search" placeholder="write some word" id="search"> 
+		<input type="submit" value="search" id="submite">
+		<ul id="list-search">
+		</ul>
+	</div>
+	<div id="checkbox">
+		<!-- <label><input type="checkbox" id="check" onchange="fun1()"> Check this</label> -->
+		<input type="radio" name='r1' value="1" > 0
+		<input type="radio" name='r1' value="2" > 1
+		<input type="radio" name='r1' value="3" > 2
+		<button onclick="fun2()"> Check something </button>
+	</div> 
+	<div id="selector">
+		<select id="one" onchange="fun3()">
+			<option value="">Apple</option>
+			<option value="">Banana</option>
+			<option value="">Orange</option>
+			<option value="">PineApple</option>
+		</select>
+	</div>
+	<div id="input-range">
+		<input type="range" min="0" max="100" step="2" oninput="fun4()" id="range">
+		<div id="test"></div>
+	</div>
+	<div class="clear"></div>
+<!-- begin CSS generetor -->
+	<div class="generator">
+		<div class="block1">
+			<p> Верхний левый угол:
+				<input type="range" id="rtl" min="0" max="100" value="0" oninput="fun5()">
+				<input type="text" id="ttl" value="0">
+			</p>
+			<p> Верхний правый угол:
+				<input type="range" id="rtr" min="0" max="100" value="0" oninput="fun5()">
+				<input type="text" id="ttr" value="0">
+			</p>
+			<p> Нижний правый угол:
+				<input type="range" id="rbr" min="0" max="100" value="0" oninput="fun5()">
+				<input type="text" id="tbr" value="0">
+			</p>
+			<p> Нижний левый угол:
+				<input type="range" id="rbl" min="0" max="100" value="0" oninput="fun5()">
+				<input type="text" id="tbl" value="0">
+			</p>
+		</div>
+		<div class="block"></div>
+	</div>
+<div class="clear"></div>
+<!-- end CSS generetor -->
+
+<!-- begin drob-down menu -->
+	<nav id="main-menu">
+		<ul>
+			<li class="item-menu">Елемент 1
+				<ul>
+					<li>Піделемент 1.1</li>
+					<li>Піделемент 1.2</li>
+				</ul>
+			</li>
+			<li class="item-menu">Елемент 2
+				<ul>
+					<li>Піделемент 2.1</li>
+					<li>Піделемент 2.2</li>
+				</ul>
+			</li>
+			<li class="item-menu">Елемент 3
+				<ul>
+					<li>Піделемент 3.1</li>
+					<li>Піделемент 3.2</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+<div class="clear"></div>
+
+<!-- end drob-down menu -->
+
+<!-- begin TABS -->
+	<div id="tabs">
+		<div class="tab white-border">Tab 1</div>
+		<div class="tab">Tab 2</div>
+		<div class="tab">TAb 3</div>
+		<div class="tab-content">1</div>
+		<div class="tab-content">2</div>
+		<div class="tab-content">3</div>
+	</div>
+	<div class="clear"></div>
+<!-- end TABS -->
+
+<!-- begin Modal Window -->
+	<div class="modal-window">
+		<button id="my-btn">Open Modal</button>
+		<div id="my-modal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p>Modal Window</p>
+			</div>
+
+		</div>
+	</div>
+	<div class="clear"></div>
+<!-- end Modal Window -->
+
+<!-- begin Animation -->
+	<div id="animation-wrp">
+		<button onclick="myMove()">Animation</button>
+		<div id="my-container">
+			<div id="my-animation"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+<!-- end Animation -->
+
+	
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.block{
+			width: 100px;
+			height: 20px;
+			background: #000;
+		}
+		.block1{
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="hotel1"></div>
+	<div id="hotel2"></div>
+	<div class="block"></div>
+	<h1><span id="main">World</span> is better than you</h1>
+	<textarea></textarea>
+	<input type="submit" onclick="button()">
+	<ul>
+		<li>One</li>
+	</ul>
+	<script type="text/javascript">
+	function Hotel(name, rooms, booked){
+		this.name = name;
+		this.rooms = rooms;
+		this.booked = booked;
+		this.checkAvailability =  function(){
+			return this.rooms - this.booked;
+		}
+	}
+	var evaHotel = new Hotel('Eva', 30, 16);
+	var brotHotel = new Hotel('Brot', 70, 54);
+
+	function details(id, hotel){
+		var elHotel1 = document.getElementById(id);
+		elHotel1.textContent ='Pokoje w hotelu' + hotel.name + hotel.checkAvailability();
+	}
+	details('hotel1', evaHotel);
+	details('hotel2', brotHotel);
+	// var elHotel1 = document.getElementById('hotel1');
+	// elHotel1.textContent ='Pokoje w hotelu' + evaHotel.name + evaHotel.checkAvailability();
+	//var details1= 'Pokoje w hotelu' + 
+
+
+
+	</script>
+	<script type="text/javascript">
+	function word (){
+		var newWord = 'Life';
+		var element = document.getElementById('main');
+		element.innerHTML = newWord;
+	}
+		function changeTime(time){
+			setTimeout(word, time);
+		};
+		changeTime(3000);
+	</script>
+	<script type="text/javascript">
+		function sizeBlock(event){
+			event.target.classList.add('block1');
+
+			//document.perentNode.removeChild('block');
+
+		}
+		var element = document.getElementsByClassName('block')[0];
+		element.addEventListener('click', sizeBlock, false);
+	</script>
+	<script type="text/javascript">
+		function button(){
+			alert('Hello');
+			msg();
+		};
+		function msg() {
+			var elList = document.getElementsByTagName('ul')[0];
+			var newElement = document.createElement('li');
+			var newList = elList.appendChild(newElement);
+			newList.innerHTML = document.getElementsByTagName('textarea')[0].value;
+		}
+		// var element = document.getElementsByTagName('input')[0];
+		// element.addEventListener('click', button, false);
+
+
+	</script>
+</body>
+</html>

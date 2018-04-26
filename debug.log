@@ -1,0 +1,12 @@
+[0317/135824.063:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\Coldmay\reports: Немає дозволу на доступ. (0x5)
+[0317/135824.067:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Канал закрито. (0x6D)
+[0317/135824.069:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\Coldmay\reports: Немає дозволу на доступ. (0x5)
+[0317/135824.599:ERROR:crashpad_client_win.cc(660)] crash server failed to launch, no dump captured
+[0320/085924.750:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\Coldmay\reports: Немає дозволу на доступ. (0x5)
+[0320/085924.768:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Канал закрито. (0x6D)
+[0320/085924.770:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\Coldmay\reports: Немає дозволу на доступ. (0x5)
+[0320/085924.822:ERROR:crashpad_client_win.cc(660)] crash server failed to launch, no dump captured
+[0321/215657.570:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\Coldmay\reports: Немає дозволу на доступ. (0x5)
+[0321/215657.611:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Канал закрито. (0x6D)
+[0321/215657.613:ERROR:crash_report_database_win.cc(563)] CreateDirectory C:\Program Files (x86)\Coldmay\reports: Немає дозволу на доступ. (0x5)
+[0321/215658.415:ERROR:crashpad_client_win.cc(660)] crash server failed to launch, no dump captured

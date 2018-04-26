@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="filter-wrp">
+		<input type="text" onkeyup="myFunction()" id="my-input" placeholder="search for name">
+		<ul id="my-ul">
+			<li><a href="" class="header">A</a></li>
+			<li><a href="">Anton</a></li>
+			<li><a href="">Andrei</a></li>
+			<li><a href="" class="header">B</a></li>
+			<li><a href="">Bogdan</a></li>
+			<li><a href="">Bill</a></li>
+			<li><a href="">Boris</a></li>
+			<li><a href="" class="header">C</a></li>
+			<li><a href="">Celvin</a></li>
+			<li><a href="">Cristina</a></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		function myFunction() {
+			var input, filter, ul, li, a, i;
+			input = document.getElementById('my-input');
+			filter = input.value.toUpperCase();
+			ul = document.getElementById('my-ul'); 
+			li = document.getElementsByTagName('li');
+			
+			for(i=0; i<li.length; i++){
+				a = li[i].getElementsByTagName('a')[0];
+				if(a.innerHTML.toUpperCase().indexOf(filter) > -1){
+					li[i].style.display = '';
+				}else {
+					li[i].style.display = 'none';
+				}
+
+			}
+		} 
+	</script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<!-- begin Progress Bar -->
+
+	<div id="my-progress">
+		<div id="my-bar">
+			<div id="label">10%</div>
+		</div>
+	</div>
+	<br>
+	<button onclick="move()">Click</button>
+<!-- end Progress Bar -->
+
+<!-- begin popup -->
+	<div class="popup" onclick="myFunction()">Click here
+		<span class="popup-text" id="my-popup">Lorem ipsum dolor sit amet, consectetur.</span>
+	</div>
+<!-- end popup -->
+
+<!-- begin accordion -->
+	<div id="accordion-wrp">
+		<button class="accordion">Section 1</button>
+		<p class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, perspiciatis?</p>
+		<button class="accordion">Section 2</button>
+		<p class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, perspiciatis?</p>
+		<button class="accordion">Section 3</button>
+		<p class="panel">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, perspiciatis?</p>
+	</div>
+
+
+<!-- end accordion -->
+
+	<input type="text" value="text something" id='text' oninput="changeCursour()">
+	<div id = 'forOne'>
+		<input type="text" class='first-line'>
+		<input type="text" class='first-line'>
+		<input type="text" class='first-line'>
+		<input type="text" class='first-line'>
+	</div>
+	<p id='change-text'><span>в теге</span> просто текст</p>.
+
+<!-- table -->
+
+	<table border = '1' width="400" id='tableSimple'>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+		
+	</table>
+
+	<script type="text/javascript">
+		var id;
+		function move()  {
+			clearInterval(id);
+			var elements = document.getElementById('my-bar');
+			var width =10;
+			var id = setInterval(frame, 10);
+			
+			function frame(){
+				if(width>=100){
+					clearInterval(id);
+				}else{
+					width++;
+					elements.style.width = width + '%';
+					document.getElementById('label').innerHTML = width + '%';
+				}
+			}
+		}
+
+		function myFunction(){
+			var popup = document.getElementById('my-popup');
+			popup.classList.toggle('show');
+		}
+// begin accordion style
+
+		var accordion = document.getElementsByClassName('accordion');
+
+		for(var i=0; i<accordion.length; i++){
+			accordion[i].onclick = accordionOnClick(i);
+				
+				//this.classList.toggle('active');
+				//this.nextElementSibling.classList.toggle('show');
+		}
+		function accordionOnClick(i){
+			return function(){
+				var text = document.getElementsByClassName('panel')[i];
+				text.classList.toggle('show');
+			}
+		}
+
+function strIng(){
+	var dupa='';
+	for(var i=1; i<7; i++){
+		for(var n=i; n<7; n++){
+			dupa += '#';
+			console.log(dupa);
+			break;
+		}
+	}
+	return dupa;
+}
+
+console.log(strIng());
+
+var x = [];
+for(var i=0; i<5 ; i++){
+	var y = [];
+	for (var n=0; n<=5; n++){
+		y[n] = n;
+	}
+	x[i] = y;
+}
+	console.log(x[0][4]);
+
+	var result, dupa;
+	dupa = '';
+	for(var i=1; i<=8; i++){
+		result = i%2;
+		if(result == 0){
+			dupa = ' # # # #'; 
+			console.log(dupa);
+		}else {
+			dupa = '# # # #';
+			console.log(dupa);
+
+		}
+	}
+
+	function minNumber(x, y){
+		if(isNaN(+x) || isNaN(+y) ){
+			console.log('not a number');
+		}else if(x<y ){
+			console.log(x)
+		}
+		else{
+			console.log(y);
+		}
+	}
+	
+	function countBs(string){
+		var res=0;
+		for(var i=0; i<string.length; i++){
+			var some = string.charAt(i);
+			if(some === 'b'){
+				res+=1;
+			console.log(res);
+			}
+		}
+	}
+	countBs('blorb');
+
+	function countChar(string, letter){
+		var res = 0;
+		for(var i=0; i<string.length; i++){
+			var some = string.charAt(i); 	
+			if(some == letter){
+				res+=1;
+			}
+		}
+
+		if(res === 0){
+			console.log('this string not have a letter')
+		}else {
+			console.log(res);
+		}
+		
+	}
+
+	countChar('finger', 'k');
+
+	function range(x, y){
+		var newTable = [];
+		var sum =0;
+		if(x<y){
+			for(var i=x; i<=y; i++){
+				newTable.push(i);
+				sum += i;
+			}
+			console.log(newTable);
+			console.log(sum);
+		}else {
+			for(var i=x; i>=y; i--){
+				newTable.push(i);
+			}
+			console.log(newTable);
+		}
+	}
+	range(1, 10);
+	range(9, 2)
+
+	// method revers
+
+	function reverseArray(arr){
+		console.log(arr);
+		arr.reverse();
+		console.log(arr);
+	}
+	reverseArray(['A', 'B', 'C']);
+
+	var arrayValue = [1, 2, 3, 4, 5];
+	function reverseArrayInPlace(value){
+		var newArray = [];
+		for(var i=value.length-1; i>=0; i--){
+			newArray.push(value[i]);
+		}
+		console.log('xxx',newArray);
+	}
+	var arrV = [5, 4, 3, 2, 1];
+	reverseArrayInPlace(arrV);
+	console.log(arrayValue);
+
+	var list = {
+		value: 1,
+		rest: {
+			value: 2,
+			rest: {
+				value: 3,
+				rest: null
+			}
+		}
+	};
+
+	function arrayToList(table){
+		var listNew = {};
+		var rest = listNew;
+		for(var i=0; i<table.length; i++) {
+			rest.value = table[i];
+			if(i===table.length-1) {
+				rest.rest = null;
+			} else {
+				rest.rest = {};
+				rest = rest.rest;
+			}
+		} 
+		return listNew;
+	}
+
+	function listToArray(list) {
+		var rest = list;
+
+		while(rest !== null) {
+
+			console.log('lkl', rest.value);
+			rest = rest.rest;
+		}
+
+	}
+	listToArray(list);
+	console.log(arrayToList([10, 11, 12, 13]));
+
+	var obj = {here: {is: 'an'}, object: 2};
+	function deepEqual(x, y){
+		if(x === y){
+			return true;
+		}else {
+			return false;
+		}
+	}
+	console.log(deepEqual(obj, {here: 1, object:2}));
+	var arr=[1, 2, 3, 4, 5, 6];
+	var result = arr.reduce(function(previosValue, thisValue, index, newArr){
+		if(index === 0){
+			newArr[index] = 5;
+		};
+		if(index >= 2){
+			return previosValue+thisValue;
+		};
+		return previosValue;
+	}, 0);
+
+	console.log(result);
+	console.log(arr);
+
+	var arrays = [[1, 2, 3], [4,5], [6]];
+	var resultHard = arrays.reduce(function(previosValue, currentV){
+		return previosValue.concat(currentV);
+	});
+
+	console.log(resultHard);
+	</script>
+		<script type="text/javascript" src="js/workWithJSON.js"></script>
+
+</body>
+</html>
